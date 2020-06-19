@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author qiuwu.zhong
  * @date 2020/06/19 17:26
  */
-@FeignClient(value = "user")
+@FeignClient(value = "user", fallback = ScheduleServiceHiHhystrix.class)
 public interface ScheduleServiceHi {
     @GetMapping("/hello")
     String sayHiFromClientOne();
