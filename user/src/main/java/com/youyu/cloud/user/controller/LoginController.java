@@ -16,8 +16,17 @@ public class LoginController {
     @Value("${server.port}")
     private String port;
 
+    @Value("${foo}")
+    private String foo;
+
     @GetMapping("/hello")
     public String test() {
         return "hello word" + ",i am from port:" + port;
     }
+
+    @GetMapping("/test/config")
+    public String testConfig() {
+        return foo;
+    }
+
 }

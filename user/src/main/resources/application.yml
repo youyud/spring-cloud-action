@@ -4,6 +4,13 @@ server:
 spring:
   application:
     name: user
+  cloud:
+    config:
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
 
 eureka:
   client:
