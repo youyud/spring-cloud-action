@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: user
+
   cloud:
     config:
       label: master
@@ -11,6 +12,12 @@ spring:
       discovery:
         enabled: true
         service-id: config-server
+
+  zipkin:
+    base-url: http://127.0.0.1:9411
+  sleuth:
+    sampler:
+      percentage: 1.0
 
 eureka:
   client:
